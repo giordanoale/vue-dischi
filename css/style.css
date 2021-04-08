@@ -14,6 +14,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
 }
 
 header select {
@@ -28,7 +30,7 @@ header select {
 .container {
     width: 80%;
     margin: auto;
-    padding-top: 50px;
+    padding-top: 70px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

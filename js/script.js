@@ -26,7 +26,11 @@ var app = new Vue({
         function(){
             axios.get("https://flynn.boolean.careers/exercises/api/array/music")
             .then( (response) => {
+
                 this.albums = response.data.response;
+
+                this.albums.sort((a, b)=>{return a.year - b.year});
+
                 for (var i = 0; i < response.data.response.length; i++) {
                     if ( !(this.generi.includes(response.data.response[i].genre))) {
                         this.generi.push(response.data.response[i].genre);
