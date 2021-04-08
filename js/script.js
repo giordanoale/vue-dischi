@@ -10,7 +10,15 @@ var app = new Vue({
         genereSel: "",
     },
     methods: {
-
+        genereSort: function() {
+                for (var i = 0; i < this.albums.length; i++) {
+                    if (this.albums.genre == this.genereSel) {
+                        this.albums.show = true;
+                    } else {
+                        this.albums.show = false;
+                    }
+                }
+            },
     },
     mounted: 
         function(){
@@ -21,6 +29,10 @@ var app = new Vue({
                     if ( !(this.generi.includes(response.data.response[i].genre))) {
                         this.generi.push(response.data.response[i].genre);
                     }
+                }
+
+                for (var i = 0; i < response.data.response.length; i++) {
+                    this.albums[i].show = true;
                 }
             });
         }

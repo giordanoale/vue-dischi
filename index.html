@@ -34,9 +34,9 @@
            <header>
                 <img class="logo" src="img/logo.png" alt="Spotify logo">
 
-                <select name="" id="">
+                <select name="" id="" v-model="genereSel" @change="genereSort">
                     <option value="all">All</option>
-                    <option @click="genereSel = genere" v-for="genere in generi" :value="genere">{{ genere }}</option>
+                    <option v-for="genere in generi" v-bind:value="genere">{{ genere }}</option>
                 </select>
            </header>
            <!-- /intestazione -->
@@ -46,7 +46,8 @@
                <div class="container">
 
                     <!-- card -->
-                    <div v-for="album in albums" class="card" v-if="album.genre == genereSel">
+                    <div v-for="album in albums" class="card" 
+                    v-if="album.show == true">
                         <img class="album-cover" :src="album.poster" :alt="album.title">
                         <h2 class="album-title">{{ album.title}}</h2>
                         <p>{{ album.author }}</p>
