@@ -12,10 +12,12 @@ var app = new Vue({
     methods: {
         genereSort: function() {
                 for (var i = 0; i < this.albums.length; i++) {
-                    if (this.albums.genre == this.genereSel) {
-                        this.albums.show = true;
+                    if (this.albums[i].genre == this.genereSel) {
+                        this.albums[i].show = true;
+                    } else if (this.genereSel == "All"){
+                        this.albums[i].show = true;
                     } else {
-                        this.albums.show = false;
+                        this.albums[i].show = false;
                     }
                 }
             },
