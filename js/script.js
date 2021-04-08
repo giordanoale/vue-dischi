@@ -7,6 +7,7 @@ var app = new Vue({
         generi: [
 
         ],
+        genereSel: "",
     },
     methods: {
 
