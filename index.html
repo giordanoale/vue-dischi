@@ -33,6 +33,11 @@
             <!-- intestazione -->
            <header>
                 <img class="logo" src="img/logo.png" alt="Spotify logo">
+
+                <select name="" id="">
+                    <option value="all">All</option>
+                    <option v-for="genere in generi" :value="genere">{{ genere }}</option>
+                </select>
            </header>
            <!-- /intestazione -->
 
